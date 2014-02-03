@@ -110,7 +110,6 @@ class TrustTreatment extends BaseEloquent implements GroupTreatmentInterface, Tr
         $receiverAllocation = $receiverAllocationEntry->getAllocation();
 
 
-        // Save only the subjects payoffs, not her partners.
         if ($subject->getTrustGroup()->isProposer()) {
             $proposerEntry->setSelectedForPayoff(true);
             $proposerEntry->setPayoff($this->getProposerEndowment() - $proposerAllocation + $receiverAllocation);
@@ -121,8 +120,10 @@ class TrustTreatment extends BaseEloquent implements GroupTreatmentInterface, Tr
             $subject->save();
         }
         else {
+            $receiverMultiplier = $this->getReceiverAllocationMultiplier();
+
             $receiverEntry->setSelectedForPayoff(true);
-            $receiverEntry->setPayoff($proposerAllocation - $receiverAllocation);
+            $receiverEntry->setPayoff($proposerAllocation*$receiverMultiplier - $receiverAllocation);
             $receiverEntry->save();
 
             $subject->setPayoffTaskId($this->getTreatmentTaskId());
