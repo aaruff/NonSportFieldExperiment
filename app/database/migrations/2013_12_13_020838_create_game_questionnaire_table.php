@@ -19,7 +19,7 @@ class CreateGameQuestionnaireTable extends Migration {
             $table->integer(GameQuestionnaire::$LEVEL_SURPRISE_KEY)->unsigned();
             $table->integer(GameQuestionnaire::$LEVEL_EXCITATION_KEY)->unsigned();
             $table->integer(GameQuestionnaire::$LEVEL_HAPPINESS_KEY)->unsigned();
-            $table->integer(GameQuestionnaire::$LIKELINESS_WINNING_KEY)->unsigned();
+            $table->integer(GameQuestionnaire::$FINAL_OUTCOME_CERTAINTY_KEY)->unsigned();
             $table->timestamps();
         });
     }

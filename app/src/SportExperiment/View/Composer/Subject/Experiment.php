@@ -148,7 +148,7 @@ class Experiment extends BaseComposer
 
             $likelinessRange = array_combine(range(0, 100), range(0,100));
             $likelinessRange['default'] = 'Select A Chance Between 0 - 100';
-            $view->with('likelinessWinningLevel', GameQuestionnaireModel::$LIKELINESS_WINNING_KEY);
+            $view->with('likelinessWinningLevel', GameQuestionnaireModel::$FINAL_OUTCOME_CERTAINTY_KEY);
             $view->with('likelinessWinningLevelOptions', $likelinessRange);
         }
 

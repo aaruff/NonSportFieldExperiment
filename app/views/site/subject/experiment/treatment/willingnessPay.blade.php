@@ -30,7 +30,7 @@
                     </p>
                     <p>
                         At this moment, how much are you willing to pay for the good you selected at the beginning of
-                        the game? Remember, the price you pay is chosen in a way such that it is in your best interest to
+                        the show? Remember, the price you pay is chosen in a way such that it is in your best interest to
                         write down exactly the most you would be willing to pay for the good.
                         (Please choose an amount between $0 and ${{$endowment}}.)
                     </p>

@@ -1,20 +1,16 @@
 <?php namespace SportExperiment\Model\Eloquent;
 
-use SportExperiment\Model\NFLTeams;
-
 class PreGameQuestionnaire extends BaseEloquent
 {
     public static $TABLE_KEY = 'pre_game_questionnaire';
 
     public static $ID_KEY = 'id';
     public static $SUBJECT_ID_KEY = 'subject_id';
-    public static $SPORT_FAN_KEY = 'sport_fan';
-    public static $FOOTBALL_FAN_KEY = 'football_fan';
-    public static $FAVORITE_TEAM_KEY = 'favorite_team';
-    public static $FAVORED_TEAM_KEY = 'favored_team';
-    public static $MEASURE_FAVORED_TEAM_KEY = 'measure_favored_team';
-    public static $DISLIKE_OPPONENT_TEAM_KEY = 'dislike_opponent_team';
-    public static $REASON_FOR_ROOTING_KEY = 'reason_for_rooting';
+    public static $TV_FAN_KEY = 'tv_fan';
+    public static $ACTION_DRAMA_FAN_KEY = 'action_drama_fan';
+    public static $MEASURE_LIKE_NCIS_KEY = 'measure_like_ncis_team';
+    public static $MEASURE_LIKE_NCIS_LA_KEY = 'measure_like_ncis_la_team';
+    public static $MEASURE_LIKE_PERSON_OF_INTEREST_KEY = 'measure_like_person_of_interest';
 
     public static $OPTION_RANGE = [1=>'1', 2=>'2', 3=>'3', 4=>'4', 5=>'5', 6=>'6', 7=>'7'];
 
@@ -32,18 +28,16 @@ class PreGameQuestionnaire extends BaseEloquent
         $this->table = self::$TABLE_KEY;
 
         $this->rules = [
-            self::$SPORT_FAN_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
-            self::$FOOTBALL_FAN_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
-            self::$FAVORITE_TEAM_KEY=>['required', 'integer', 'min:0', 'max:' . NFLTeams::numTeams()],
-            self::$FAVORED_TEAM_KEY=>['required', 'integer', 'min:0', 'max:' . NFLTeams::numTeams()],
-            self::$MEASURE_FAVORED_TEAM_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
-            self::$DISLIKE_OPPONENT_TEAM_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
-            self::$REASON_FOR_ROOTING_KEY=>['required', 'in:0,1,2,3,4'],
+            self::$TV_FAN_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
+            self::$ACTION_DRAMA_FAN_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
+            self::$MEASURE_LIKE_NCIS_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
+            self::$MEASURE_LIKE_NCIS_LA_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
+            self::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
         ];
 
         $this->fillable = [
-            self::$SPORT_FAN_KEY, self::$FOOTBALL_FAN_KEY, self::$FAVORITE_TEAM_KEY, self::$FAVORED_TEAM_KEY,
-            self::$MEASURE_FAVORED_TEAM_KEY, self::$DISLIKE_OPPONENT_TEAM_KEY, self::$REASON_FOR_ROOTING_KEY
+            self::$TV_FAN_KEY, self::$ACTION_DRAMA_FAN_KEY, self::$MEASURE_LIKE_NCIS_KEY,
+            self::$MEASURE_LIKE_NCIS_LA_KEY, self::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY
         ];
 
         parent::__construct($attributes);
@@ -71,13 +65,13 @@ class PreGameQuestionnaire extends BaseEloquent
     }
 
     /**
-     * Returns the sport fan key.
+     * Returns the TV fan key.
      *
      * @return string
      */
-    public static function getSportFanKey()
+    public static function getTvFanKey()
     {
-        return self::$SPORT_FAN_KEY;
+        return self::$TV_FAN_KEY;
     }
 
     /**
@@ -85,29 +79,9 @@ class PreGameQuestionnaire extends BaseEloquent
      *
      * @return string
      */
-    public static function getFootballFanKey()
+    public static function getActionDramaFanKey()
     {
-        return self::$FOOTBALL_FAN_KEY;
-    }
-
-    /**
-     * Returns the favorite team key.
-     *
-     * @return string
-     */
-    public static function getFavoriteTeamKey()
-    {
-        return self::$FAVORITE_TEAM_KEY;
-    }
-
-    /**
-     * Returns the favored team key.
-     *
-     * @return string
-     */
-    public static function getFavoredTeamKey()
-    {
-        return self::$FAVORED_TEAM_KEY;
+        return self::$ACTION_DRAMA_FAN_KEY;
     }
 
     /**
@@ -115,9 +89,19 @@ class PreGameQuestionnaire extends BaseEloquent
      *
      * @return string
      */
-    public static function getMeasureFavoredTeamKey()
+    public static function getMeasureLikeNcisKey()
     {
-        return self::$MEASURE_FAVORED_TEAM_KEY;
+        return self::$MEASURE_LIKE_NCIS_KEY;
+    }
+
+    public static function getMeasureLikeNcisLaKey()
+    {
+        return self::$MEASURE_LIKE_NCIS_LA_KEY;
+    }
+
+    public static function getMeasureLikePersonOfInterestKey()
+    {
+        return self::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY;
     }
 
 }

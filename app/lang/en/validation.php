@@ -97,35 +97,23 @@ return array(
         /*
          * Game Questionnaire
          */
-        PreGameQuestionnaire::$SPORT_FAN_KEY => array(
+        PreGameQuestionnaire::$TV_FAN_KEY => array(
             'required'=>'An entry between 1 and 7 is required',
             'in'=>'An entry between 1 and 7 is required'
         ),
-        PreGameQuestionnaire::$FOOTBALL_FAN_KEY => array(
+        PreGameQuestionnaire::$ACTION_DRAMA_FAN_KEY => array(
             'required'=>'An entry between 1 and 7 is required',
             'in'=>'An entry between 1 and 7 is required'
         ),
-        PreGameQuestionnaire::$FAVORITE_TEAM_KEY => array(
-            'required'=>'A team selection is required',
-            'integer'=>'A team selection is required',
-            'in'=>'An team must be selected',
-            'min'=>'An team must be selected',
-        ),
-        PreGameQuestionnaire::$FAVORED_TEAM_KEY => array(
-            'required'=>'A team selection is required',
-            'integer'=>'A team selection is required',
-            'in'=>'An team must be selected',
-            'min'=>'An team must be selected',
-        ),
-        PreGameQuestionnaire::$MEASURE_FAVORED_TEAM_KEY => array(
+        PreGameQuestionnaire::$MEASURE_LIKE_NCIS_KEY => array(
             'required'=>'An entry between 1 and 7 is required',
             'in'=>'An entry between 1 and 7 is required'
         ),
-        PreGameQuestionnaire::$DISLIKE_OPPONENT_TEAM_KEY => array(
+        PreGameQuestionnaire::$MEASURE_LIKE_NCIS_LA_KEY => array(
             'required'=>'An entry between 1 and 7 is required',
             'in'=>'An entry between 1 and 7 is required'
         ),
-        PreGameQuestionnaire::$REASON_FOR_ROOTING_KEY => array(
+        PreGameQuestionnaire::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY => array(
             'required'=>'A selection is required',
             'in'=>'A selection is required'
         ),
@@ -144,7 +132,7 @@ return array(
             'required'=>'An entry between 1 and 7 is required',
             'in'=>'An entry between 1 and 7 is required'
         ),
-        GameQuestionnaire::$LIKELINESS_WINNING_KEY => array(
+        GameQuestionnaire::$FINAL_OUTCOME_CERTAINTY_KEY => array(
             'in'=> 'An entry between 0 and 100 is required',
             'required'=> 'An entry between 0 and 100 is required'
         ),

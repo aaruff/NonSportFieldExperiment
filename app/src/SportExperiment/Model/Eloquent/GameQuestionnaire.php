@@ -9,7 +9,7 @@ class GameQuestionnaire extends BaseEloquent
     public static $LEVEL_SURPRISE_KEY = 'level_surprise';
     public static $LEVEL_EXCITATION_KEY = 'level_excitation';
     public static $LEVEL_HAPPINESS_KEY = 'level_happiness';
-    public static $LIKELINESS_WINNING_KEY = 'likeliness_winning';
+    public static $FINAL_OUTCOME_CERTAINTY_KEY = 'outcome_certainty';
 
     public static $OPTION_RANGE = [1=>'1', 2=>'2', 3=>'3', 4=>'4', 5=>'5', 6=>'6', 7=>'7'];
 
@@ -30,12 +30,12 @@ class GameQuestionnaire extends BaseEloquent
             self::$LEVEL_SURPRISE_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
             self::$LEVEL_EXCITATION_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
             self::$LEVEL_HAPPINESS_KEY=>['required', 'in:0,1,2,3,4,5,6,7'],
-            self::$LIKELINESS_WINNING_KEY=>['required','in:'. implode(',', range(0, 100))],
+            self::$FINAL_OUTCOME_CERTAINTY_KEY=>['required','in:'. implode(',', range(0, 100))],
         ];
 
         $this->fillable = [
             self::$LEVEL_SURPRISE_KEY, self::$LEVEL_EXCITATION_KEY,
-            self::$LEVEL_HAPPINESS_KEY, self::$LIKELINESS_WINNING_KEY];
+            self::$LEVEL_HAPPINESS_KEY, self::$FINAL_OUTCOME_CERTAINTY_KEY];
 
         parent::__construct($attributes);
     }

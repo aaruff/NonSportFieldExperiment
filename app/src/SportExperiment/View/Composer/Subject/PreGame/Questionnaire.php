@@ -14,33 +14,20 @@ class Questionnaire extends BaseComposer
     {
         $view->with('postUrl', URL::to(PreGameQuestionnaireController::getRoute()));
 
-        $view->with('sportFan', PreGameQuestionnaireModel::$SPORT_FAN_KEY);
-        $view->with('sportFanOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
+        $view->with('tvFan', PreGameQuestionnaireModel::$TV_FAN_KEY);
+        $view->with('tvFanOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
 
-        $view->with('footballFan', PreGameQuestionnaireModel::$FOOTBALL_FAN_KEY);
-        $view->with('footballFanOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
+        $view->with('actionDramaFan', PreGameQuestionnaireModel::$ACTION_DRAMA_FAN_KEY);
+        $view->with('actionDramaFanOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
 
-        $view->with('favoriteTeam', PreGameQuestionnaireModel::$FAVORITE_TEAM_KEY);
-        $view->with('favoriteTeamOptions', array_merge([0=>'I do not have a favorite team.', 'default'=>'Select A Team'], NFLTeams::getNFLTeams()));
+        $view->with('measureLikeNcis', PreGameQuestionnaireModel::$MEASURE_LIKE_NCIS_KEY);
+        $view->with('measureLikeNcisOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
 
-        $view->with('favoredTeam', PreGameQuestionnaireModel::$FAVORED_TEAM_KEY);
-        $view->with('favoredTeamOptions', array_merge([0=>'I am not rooting for any teams today.', 'default'=>'Select A Team'], NFLTeams::getNFLTeams()));
+        $view->with('measureLikeNcisLa', PreGameQuestionnaireModel::$MEASURE_LIKE_NCIS_LA_KEY);
+        $view->with('measureLikeNcisLaOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
 
-        $view->with('measureFavoredTeam', PreGameQuestionnaireModel::$MEASURE_FAVORED_TEAM_KEY);
-        $view->with('measureFavoredTeamOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
-
-        $view->with('dislikeOpponentTeam', PreGameQuestionnaireModel::$DISLIKE_OPPONENT_TEAM_KEY);
-        $view->with('dislikeOpponentTeamOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
-
-        $view->with('reasonForRooting', PreGameQuestionnaireModel::$REASON_FOR_ROOTING_KEY);
-        $view->with('reasonForRootingOptions',
-            array_merge(['default'=>'Select One'],
-                [
-                    1=>'I need that team to win in order for my truly favorite team to make the playoffs',
-                    2=>'I bet on that team',
-                    3=>'For fantasy football',
-                    4=>'Other'
-                ]));
+        $view->with('measureLikePersonOfInterest', PreGameQuestionnaireModel::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY);
+        $view->with('measureLikePersonOfInterestOptions', array_merge(['default'=>'Select A Number Between 1 - 7'], PreGameQuestionnaireModel::getOptionRange()));
     }
 
 } 

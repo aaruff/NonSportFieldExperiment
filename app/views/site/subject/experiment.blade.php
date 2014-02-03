@@ -35,7 +35,7 @@
 
                 {{-- Surprise Level --}}
                 <div class="col-sm-11 form-group {{ ($errors->has($surpriseLevel)) ? 'has-error' : '' }} ">
-                    {{ Form::label($surpriseLevel, 'How surprised are you about the recent events in the game, i.e. events since the last commercial break entry?', ['class'=>'']) }}
+                    {{ Form::label($surpriseLevel, 'How surprised are you about the recent events in the show, i.e. events since the last commercial break entry?', ['class'=>'']) }}
                     <p>(1 not at all, 3 somewhat, 5 a lot, 7 incredibly)</p>
                     {{ Form::select($surpriseLevel, $surpriseLevelOptions, 'default', ['class'=>'form-control']) }}
                     <span class="error">{{ $errors->first($surpriseLevel) }}</span>
@@ -43,7 +43,7 @@
 
                 {{-- Excitation Level --}}
                 <div class="col-sm-11 form-group {{ ($errors->has($excitationLevel)) ? 'has-error' : '' }} ">
-                    {{ Form::label($excitationLevel, 'How exciting do you find the game you are watching?', ['class'=>'']) }}
+                    {{ Form::label($excitationLevel, 'How exciting do you find the show you are watching?', ['class'=>'']) }}
                     <p>(1 not at all, 3 somewhat, 5 a lot, 7 incredibly)</p>
                     {{ Form::select($excitationLevel, $excitationLevelOptions, 'default', ['class'=>'form-control']) }}
                     <span class="error">{{ $errors->first($excitationLevel) }}</span>
@@ -58,10 +58,10 @@
                     <span class="error">{{ $errors->first($happinessLevel) }}</span>
                 </div>
 
-                {{-- Likeliness of Winning --}}
+                {{-- Outcome Certainty --}}
                 <div class="col-sm-11 form-group {{ ($errors->has($likelinessWinningLevel)) ? 'has-error' : '' }} ">
-                    {{ Form::label($happinessLevel, 'What do you think the chances are that the team you said you were rooting for will win?', ['class'=>'']) }}
-                    <p>(0 means definitely won't win, 100 means definitely will win.)</p>
+                    {{ Form::label($happinessLevel, 'How strongly do you feel you know the final outcome of this episode?', ['class'=>'']) }}
+                    <p>(0 means I have no idea, 100 means definitely know.)</p>
                     {{ Form::select($likelinessWinningLevel, $likelinessWinningLevelOptions, 'default', ['class'=>'form-control']) }}
                     <span class="error">{{ $errors->first($likelinessWinningLevel) }}</span>
                 </div>

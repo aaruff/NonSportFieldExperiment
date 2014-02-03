@@ -17,13 +17,11 @@ class CreatePregameQuestionnaireTable extends Migration {
         Schema::create(PreGameQuestionnaire::$TABLE_KEY, function($table){
             $table->increments(PreGameQuestionnaire::$ID_KEY);
             $table->integer(PreGameQuestionnaire::$SUBJECT_ID_KEY)->unsigned();
-            $table->integer(PreGameQuestionnaire::$SPORT_FAN_KEY)->unsigned();
-            $table->integer(PreGameQuestionnaire::$FOOTBALL_FAN_KEY)->unsigned();
-            $table->string(PreGameQuestionnaire::$FAVORITE_TEAM_KEY);
-            $table->string(PreGameQuestionnaire::$FAVORED_TEAM_KEY);
-            $table->integer(PreGameQuestionnaire::$MEASURE_FAVORED_TEAM_KEY)->unsigned();
-            $table->integer(PreGameQuestionnaire::$DISLIKE_OPPONENT_TEAM_KEY)->unsigned();
-            $table->integer(PreGameQuestionnaire::$REASON_FOR_ROOTING_KEY)->unsigned();
+            $table->integer(PreGameQuestionnaire::$TV_FAN_KEY)->unsigned();
+            $table->integer(PreGameQuestionnaire::$ACTION_DRAMA_FAN_KEY)->unsigned();
+            $table->integer(PreGameQuestionnaire::$MEASURE_LIKE_NCIS_KEY)->unsigned();
+            $table->integer(PreGameQuestionnaire::$MEASURE_LIKE_NCIS_LA_KEY)->unsigned();
+            $table->integer(PreGameQuestionnaire::$MEASURE_LIKE_PERSON_OF_INTEREST_KEY)->unsigned();
             $table->timestamps();
         });
 	}
