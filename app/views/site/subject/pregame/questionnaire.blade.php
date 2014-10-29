@@ -5,7 +5,7 @@
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Pre-Game Questionnaire</h3>
+                <h3 class="panel-title">Pre-Show Questionnaire</h3>
             </div>
 
             <div class="panel-body">
